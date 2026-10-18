@@ -1,0 +1,330 @@
+FOOTBALL SOUNDS V2 — CREDITS AND LICENCES
+
+audio/crowd_calm_loop.mp3
+Real distant football stadium ambience.
+Artist: BeeProductive
+Licence: CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://freesound.org/people/BeeProductive/sounds/395592/
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3. 400 ms crossfade for looping.
+
+audio/crowd_match_loop.mp3
+Real crowd outside Plymouth Argyle’s Home Park.
+Artist: OleSouWester
+Licence: CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://freesound.org/people/OleSouWester/sounds/437675/
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3. 400 ms crossfade for looping.
+
+audio/crowd_tense_loop.mp3
+Quieter distant football crowd bed.
+Artist: BeeProductive
+Licence: CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://freesound.org/people/BeeProductive/sounds/395592/
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3. 400 ms crossfade for looping.
+
+audio/goal_cheer_1.mp3
+Real football crowd cheering; edited reaction variant 1.
+Artist: Kinoton
+Licence: CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://freesound.org/people/Kinoton/sounds/348978/
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/goal_cheer_2.mp3
+Real football crowd cheering; edited reaction variant 2.
+Artist: Kinoton
+Licence: CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://freesound.org/people/Kinoton/sounds/348978/
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/goal_cheer_3.mp3
+Real football crowd cheering; edited reaction variant 3.
+Artist: Kinoton
+Licence: CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://freesound.org/people/Kinoton/sounds/348978/
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/crowd_applause.mp3
+Recorded audience applause.
+Artist: stephan
+Licence: Public domain
+https://creativecommons.org/publicdomain/mark/1.0/
+Source: https://commons.wikimedia.org/wiki/File:Slow_starting_applause.ogg
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/crowd_disappointed.mp3
+Recorded crowd booing reaction.
+Artist: NeoSpica
+Licence: CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://freesound.org/people/NeoSpica/sounds/504621/
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/crowd_near_miss.mp3
+Recorded group “ohhh” reaction.
+Artist: starlite
+Licence: Public domain
+https://creativecommons.org/publicdomain/mark/1.0/
+Source: https://commons.wikimedia.org/wiki/File:Ohhh_ahhh.ogg
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/whistle_single.mp3
+One recorded pea-whistle blast.
+Artist: Work With Sounds  / Konrad Gutkowski
+Licence: CC BY 4.0
+https://creativecommons.org/licenses/by/4.0
+Source: https://commons.wikimedia.org/wiki/File:WWS_Policewhistle.ogg
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/whistle_kickoff.mp3
+One longer recorded whistle blast.
+Artist: Work With Sounds  / Konrad Gutkowski
+Licence: CC BY 4.0
+https://creativecommons.org/licenses/by/4.0
+Source: https://commons.wikimedia.org/wiki/File:WWS_Policewhistle.ogg
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/whistle_halftime.mp3
+Two short recorded whistle blasts.
+Artist: Work With Sounds  / Konrad Gutkowski
+Licence: CC BY 4.0
+https://creativecommons.org/licenses/by/4.0
+Source: https://commons.wikimedia.org/wiki/File:WWS_Policewhistle.ogg
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/whistle_final.mp3
+Three recorded blasts, with a longer final blast.
+Artist: Work With Sounds  / Konrad Gutkowski
+Licence: CC BY 4.0
+https://creativecommons.org/licenses/by/4.0
+Source: https://commons.wikimedia.org/wiki/File:WWS_Policewhistle.ogg
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/bus_arrival.mp3
+Real bus engine starting; travel-screen cue.
+Artist: Evan0512
+Licence: CC BY-SA 4.0
+https://creativecommons.org/licenses/by-sa/4.0
+Source: https://commons.wikimedia.org/wiki/File:Merced_The_Bus_Gillig_engine_start.ogg
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/bus_departure.mp3
+Real bus engine running after starting; travel-screen cue.
+Artist: Evan0512
+Licence: CC BY-SA 4.0
+https://creativecommons.org/licenses/by-sa/4.0
+Source: https://commons.wikimedia.org/wiki/File:Merced_The_Bus_Gillig_engine_start.ogg
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/bus_door_airbrake.mp3
+Recorded city bus pneumatic door closing.
+Artist: Work With Sounds  / Technical Museum of Slovenia
+Licence: CC BY 4.0
+https://creativecommons.org/licenses/by/4.0
+Source: https://commons.wikimedia.org/wiki/File:WWS_CityBusMANSG220dooropeningclosing.ogg
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/aeroplane_takeoff.mp3
+Real jet approach swell, used as a flight transition; source is an overhead pass.
+Artist: Jud McCranie
+Licence: CC BY-SA 4.0
+https://creativecommons.org/licenses/by-sa/4.0
+Source: https://commons.wikimedia.org/wiki/File:Jet_airliner_overhead.ogg
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/aeroplane_flyover.mp3
+Real jet aircraft passing overhead.
+Artist: Jud McCranie
+Licence: CC BY-SA 4.0
+https://creativecommons.org/licenses/by-sa/4.0
+Source: https://commons.wikimedia.org/wiki/File:Jet_airliner_overhead.ogg
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/ui_message.mp3
+Soft original interface chime.
+Artist: Original audio created for this game pack
+Licence: CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+Source: Original composition
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/ui_transfer_complete.mp3
+Soft original interface chime.
+Artist: Original audio created for this game pack
+Licence: CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+Source: Original composition
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/ui_warning.mp3
+Soft original interface chime.
+Artist: Original audio created for this game pack
+Licence: CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+Source: Original composition
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/ui_contract_signed.mp3
+Soft original interface chime.
+Artist: Original audio created for this game pack
+Licence: CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+Source: Original composition
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/commentary_goal_its_in.mp3
+British neural synthetic voice; no broadcaster imitation.
+Artist: Synthetic speech generated with Piper northern_english_male
+Licence: CC BY-SA 4.0 (conservative distribution terms following voice training data)
+https://creativecommons.org/licenses/by-sa/4.0/
+Source: https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_GB/northern_english_male/medium/MODEL_CARD
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/commentary_goal_what_a_finish.mp3
+British neural synthetic voice; no broadcaster imitation.
+Artist: Synthetic speech generated with Piper northern_english_male
+Licence: CC BY-SA 4.0 (conservative distribution terms following voice training data)
+https://creativecommons.org/licenses/by-sa/4.0/
+Source: https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_GB/northern_english_male/medium/MODEL_CARD
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/commentary_take_the_lead.mp3
+British neural synthetic voice; no broadcaster imitation.
+Artist: Synthetic speech generated with Piper northern_english_male
+Licence: CC BY-SA 4.0 (conservative distribution terms following voice training data)
+https://creativecommons.org/licenses/by-sa/4.0/
+Source: https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_GB/northern_english_male/medium/MODEL_CARD
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/commentary_equaliser.mp3
+British neural synthetic voice; no broadcaster imitation.
+Artist: Synthetic speech generated with Piper northern_english_male
+Licence: CC BY-SA 4.0 (conservative distribution terms following voice training data)
+https://creativecommons.org/licenses/by-sa/4.0/
+Source: https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_GB/northern_english_male/medium/MODEL_CARD
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/commentary_brilliant_save.mp3
+British neural synthetic voice; no broadcaster imitation.
+Artist: Synthetic speech generated with Piper northern_english_male
+Licence: CC BY-SA 4.0 (conservative distribution terms following voice training data)
+https://creativecommons.org/licenses/by-sa/4.0/
+Source: https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_GB/northern_english_male/medium/MODEL_CARD
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/commentary_off_the_post.mp3
+British neural synthetic voice; no broadcaster imitation.
+Artist: Synthetic speech generated with Piper northern_english_male
+Licence: CC BY-SA 4.0 (conservative distribution terms following voice training data)
+https://creativecommons.org/licenses/by-sa/4.0/
+Source: https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_GB/northern_english_male/medium/MODEL_CARD
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/commentary_just_wide.mp3
+British neural synthetic voice; no broadcaster imitation.
+Artist: Synthetic speech generated with Piper northern_english_male
+Licence: CC BY-SA 4.0 (conservative distribution terms following voice training data)
+https://creativecommons.org/licenses/by-sa/4.0/
+Source: https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_GB/northern_english_male/medium/MODEL_CARD
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/commentary_halftime.mp3
+British neural synthetic voice; no broadcaster imitation.
+Artist: Synthetic speech generated with Piper northern_english_male
+Licence: CC BY-SA 4.0 (conservative distribution terms following voice training data)
+https://creativecommons.org/licenses/by-sa/4.0/
+Source: https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_GB/northern_english_male/medium/MODEL_CARD
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/commentary_fulltime.mp3
+British neural synthetic voice; no broadcaster imitation.
+Artist: Synthetic speech generated with Piper northern_english_male
+Licence: CC BY-SA 4.0 (conservative distribution terms following voice training data)
+https://creativecommons.org/licenses/by-sa/4.0/
+Source: https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_GB/northern_english_male/medium/MODEL_CARD
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/commentary_kickoff.mp3
+British neural synthetic voice; no broadcaster imitation.
+Artist: Synthetic speech generated with Piper northern_english_male
+Licence: CC BY-SA 4.0 (conservative distribution terms following voice training data)
+https://creativecommons.org/licenses/by-sa/4.0/
+Source: https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_GB/northern_english_male/medium/MODEL_CARD
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/commentary_penalty.mp3
+British neural synthetic voice; no broadcaster imitation.
+Artist: Synthetic speech generated with Piper northern_english_male
+Licence: CC BY-SA 4.0 (conservative distribution terms following voice training data)
+https://creativecommons.org/licenses/by-sa/4.0/
+Source: https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_GB/northern_english_male/medium/MODEL_CARD
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/commentary_red_card.mp3
+British neural synthetic voice; no broadcaster imitation.
+Artist: Synthetic speech generated with Piper northern_english_male
+Licence: CC BY-SA 4.0 (conservative distribution terms following voice training data)
+https://creativecommons.org/licenses/by-sa/4.0/
+Source: https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_GB/northern_english_male/medium/MODEL_CARD
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/commentary_promotion.mp3
+British neural synthetic voice; no broadcaster imitation.
+Artist: Synthetic speech generated with Piper northern_english_male
+Licence: CC BY-SA 4.0 (conservative distribution terms following voice training data)
+https://creativecommons.org/licenses/by-sa/4.0/
+Source: https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_GB/northern_english_male/medium/MODEL_CARD
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/commentary_cup_winners.mp3
+British neural synthetic voice; no broadcaster imitation.
+Artist: Synthetic speech generated with Piper northern_english_male
+Licence: CC BY-SA 4.0 (conservative distribution terms following voice training data)
+https://creativecommons.org/licenses/by-sa/4.0/
+Source: https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_GB/northern_english_male/medium/MODEL_CARD
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/commentary_new_signing.mp3
+British neural synthetic voice; no broadcaster imitation.
+Artist: Synthetic speech generated with Piper northern_english_male
+Licence: CC BY-SA 4.0 (conservative distribution terms following voice training data)
+https://creativecommons.org/licenses/by-sa/4.0/
+Source: https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_GB/northern_english_male/medium/MODEL_CARD
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/commentary_away_goal.mp3
+British neural synthetic voice; no broadcaster imitation.
+Artist: Synthetic speech generated with Piper northern_english_male
+Licence: CC BY-SA 4.0 (conservative distribution terms following voice training data)
+https://creativecommons.org/licenses/by-sa/4.0/
+Source: https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_GB/northern_english_male/medium/MODEL_CARD
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/commentary_late_winner.mp3
+British neural synthetic voice; no broadcaster imitation.
+Artist: Synthetic speech generated with Piper northern_english_male
+Licence: CC BY-SA 4.0 (conservative distribution terms following voice training data)
+https://creativecommons.org/licenses/by-sa/4.0/
+Source: https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_GB/northern_english_male/medium/MODEL_CARD
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/commentary_good_move.mp3
+British neural synthetic voice; no broadcaster imitation.
+Artist: Synthetic speech generated with Piper northern_english_male
+Licence: CC BY-SA 4.0 (conservative distribution terms following voice training data)
+https://creativecommons.org/licenses/by-sa/4.0/
+Source: https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_GB/northern_english_male/medium/MODEL_CARD
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+
+audio/ball_kick.mp3
+Recorded football kick.
+Artist: Frogfriend99
+Licence: CC BY-SA 3.0
+https://creativecommons.org/licenses/by-sa/3.0
+Source: https://commons.wikimedia.org/wiki/File:Soccer_kick_effect.ogg
+Changes: Excerpt, 55 Hz rumble filter, level balancing, short fades, mono 32 kHz / 64 kbps MP3.
+

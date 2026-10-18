@@ -1,0 +1,100 @@
+/* The squad, properly. Every player has attributes you can inspect (pace, passing, shooting, tackling, heading, dribbling, long throws,
+   leadership, composure, work rate; handling and reflexes for keepers), a profile you open from his card, and the chairman picks the
+   captain. Formations: the manager has his, you can suggest another, and the line-up and the pitch follow it. Wages follow a believable
+   structure (stars earn several times what squad players do; youngsters earn less). Players retire. The sidebar is grouped. */
+
+const baseSqRollover = performSeasonRollover, baseSqLineup = lineupFor, baseSqFootball = football, baseSqNav = navHtml, baseSqPause = pauseSettings;
+const ATTRS = { out: ['pace', 'passing', 'shooting', 'tackling', 'heading', 'dribbling', 'stamina', 'throws', 'leadership', 'composure', 'workrate', 'setpieces'], gk: ['handling', 'reflexes', 'kicking', 'command', 'leadership', 'composure', 'stamina', 'throws'] };
+const ATTR_NAME = { pace: 'Pace', passing: 'Passing', shooting: 'Shooting', tackling: 'Tackling', heading: 'Heading', dribbling: 'Dribbling', stamina: 'Stamina', throws: 'Long throws', leadership: 'Leadership', composure: 'Composure', workrate: 'Work rate', setpieces: 'Set pieces', handling: 'Handling', reflexes: 'Reflexes', kicking: 'Kicking', command: 'Command of area' };
+const POS_BIAS = { GK: {}, DEF: { tackling: 8, heading: 7, shooting: -10, dribbling: -5, pace: -1 }, MID: { passing: 7, workrate: 5, stamina: 4, heading: -3, shooting: -1 }, FWD: { shooting: 9, pace: 4, dribbling: 4, tackling: -10, heading: 1 } };
+const FORMS = { '4-4-2': [1, 4, 4, 2], '4-3-3': [1, 4, 3, 3], '4-2-3-1': [1, 4, 5, 1], '3-5-2': [1, 3, 5, 2], '5-3-2': [1, 5, 3, 2], '4-5-1': [1, 4, 5, 1], '3-4-3': [1, 3, 4, 3] };
+const FORM_FX = { '4-4-2': [0, 0], '4-3-3': [2, -1.5], '4-2-3-1': [1, 0], '3-5-2': [1.5, -2], '5-3-2': [-2, 2.5], '4-5-1': [-1.5, 1.5], '3-4-3': [3, -3] };
+function attrs(p) {
+  if (p.attrs && p.attrs.r === Math.round(p.rating)) return p.attrs; let pos = normPos(p.position), keys = pos === 'GK' ? ATTRS.gk : ATTRS.out, base = p.rating, out = { r: Math.round(p.rating) };
+  for (let k of keys) { let j = ((Math.abs(hash(p.id + '|' + k)) % 1000) / 1000 - .5) * 18, b = (POS_BIAS[pos] || {})[k] || 0, age = k === 'pace' || k === 'stamina' ? (p.age > 31 ? -(p.age - 31) * 1.6 : p.age < 22 ? 2 : 0) : k === 'leadership' || k === 'composure' ? (p.age > 28 ? Math.min(8, (p.age - 28) * 1.5) : p.age < 22 ? -5 : 0) : 0; out[k] = clamp(Math.round(base + j + b + age), 20, 99) }
+  if (out.throws == null) out.throws = clamp(Math.round(40 + (Math.abs(hash(p.id + 'th')) % 50)), 20, 95); p.attrs = out; return out;
+}
+function captainScore(p) { let a = attrs(p); return Math.round(a.leadership * .6 + a.composure * .2 + Math.min(100, (p.apps || 0) * 2 + p.age * 1.5) * .2) }
+function captain() { let c = g.squad.find(p => p.id === g.captain); if (!c) { c = [...g.squad].sort((a, b) => captainScore(b) - captainScore(a))[0]; if (c) g.captain = c.id } return c }
+function setCaptain(id) { let p = g.squad.find(x => x.id === id); if (!p) return; let best = [...g.squad].sort((a, b) => captainScore(b) - captainScore(a))[0], prev = g.captain; g.captain = id; let score = captainScore(p);
+  if (p.id !== best.id && score < captainScore(best) - 15) { g.world.managerTrust = clamp(g.world.managerTrust - 3, 5, 100); g.morale = clamp(g.morale - 2, 10, 100); toast(`${p.name} is captain. The manager would have chosen ${best.name.split(' ').pop()}; the dressing room noticed.`) } else { g.morale = clamp(g.morale + 1, 10, 100); toast(`${p.name} is the new captain.`) }
+  if (prev && prev !== id) { let q = g.squad.find(x => x.id === prev); if (q) msg('Captaincy changes', `${p.name} takes the armband from ${q.name}.`, 'football') } save(); closeModal(); render(); }
+/* ---------- the profile ---------- */
+function attrBar(k, v) { return `<div class="attr"><span>${ATTR_NAME[k]}</span><div class="attrbar"><i style="width:${v}%" class="${v >= 75 ? 'hi' : v >= 55 ? 'ok' : 'lo'}"></i></div><b>${v}</b></div>` }
+function playerProfile(id) {
+  let p = g.squad.find(x => x.id === id); if (!p) return; let a = attrs(p), pos = normPos(p.position), keys = pos === 'GK' ? ATTRS.gk : ATTRS.out, cap = captain(), isCap = cap && cap.id === p.id, cs = captainScore(p), best = Math.max(...keys.map(k => a[k])), strengths = keys.filter(k => a[k] >= best - 6).slice(0, 3).map(k => ATTR_NAME[k].toLowerCase());
+  let face = typeof playerFace === 'function' ? playerFace(p, 'prof', 120) : '', st = typeof ps === 'function' && g.world.ps && g.world.ps.p[p.id] ? g.world.ps.p[p.id] : null;
+  $('modal').innerHTML = `<div class="overlay"><div class="modal profile"><div class="topline"><span class="eyebrow">PLAYER PROFILE</span><button class="textbutton" onclick="closeModal()">Close ×</button></div><div class="profhead">${face}<div><h1>${esc(p.name)} ${isCap ? '<span class="capbadge">C</span>' : ''}</h1><p>${esc(p.position)} · ${p.age} years · ${esc(p.nationality || 'England')} · #${esc(p.number || '–')}</p><div class="chips"><span>Rating ${Math.round(p.rating)}</span><span>${money(p.wage)}/wk</span><span>Value ${compact(playerValue(p))}</span><span>Contract to ${contractEnd(p)}</span>${p.inj ? '<span class="bad">Injured</span>' : ''}${st ? `<span>${st.g} goals · ${st.a} assists · ${st.ap} apps</span>` : ''}</div><p class="fineprint">Strengths: ${strengths.join(', ')}. Captaincy score ${cs}/100${isCap ? ' · current captain' : ''}.</p></div></div>
+  <div class="attrgrid">${keys.map(k => attrBar(k, a[k])).join('')}</div>
+  <div class="actions">${isCap ? '<button disabled>Club captain</button>' : `<button class="primary" onclick="setCaptain('${p.id}')">Make captain</button>`}<button onclick="closeModal();renewModal('${p.id}')">Contract talks</button><button onclick="closeModal();sellPlayer('${p.id}')">Consider sale</button></div></div></div>`;
+}
+/* ---------- formations ---------- */
+function formation() { return g.world.formation || (g.world.formation = ({ attacking: '4-3-3', possession: '4-2-3-1', pragmatic: '4-4-2', counter: '4-5-1', motivator: '4-4-2' })[g.manager.style] || '4-4-2') }
+function oppFormation(id) { let keys = Object.keys(FORMS); return keys[Math.abs(hash('form' + id + g.season)) % keys.length] }
+function suggestFormation(f) { if (!FORMS[f]) return; let l = g.world.live; if (l && !l.paused) return toast('Wait for a stoppage.'); let ok = rnd() < clamp(.4 + g.world.managerTrust * .006, .25, .95); if (ok) { g.world.formation = f; g.world.managerTrust = clamp(g.world.managerTrust - 1, 5, 100); toast(`The manager agrees: ${f} from the next match.`) } else { g.world.managerTrust = clamp(g.world.managerTrust - 2, 5, 100); toast(`The manager prefers his ${formation()}. He will think about it.`) } save(); render() }
+lineupFor = function (l) {
+  let res = baseSqLineup(l), f = g.world.fixtures.find(x => x.id === l.fixture); if (!f) return res; let mine = f.home === g.clubId ? 'h' : 'a', shape = FORMS[formation()], players = [...g.squad].filter(p => !p.inj).sort((a, b) => b.rating - a.rating);
+  if (players.length >= 11 && shape) { let xi = pickXI(players, shape); let I = g.world.instr; if (!I || (!I.bench.length && !I.start.length)) res[mine] = xi; }
+  let oppId = mine === 'h' ? f.away : f.home, os = FORMS[oppFormation(oppId)], opp = typeof squadOf === 'function' ? squadOf(oppId) : []; if (opp.length >= 11 && os) res[mine === 'h' ? 'a' : 'h'] = pickXI(opp, os);
+  res.shapes = { [mine]: formation(), [mine === 'h' ? 'a' : 'h']: oppFormation(oppId) }; let c = captain(); if (c) { let me = res[mine].find(x => x.id === c.id); if (me) me.cap = true } return res;
+};
+posOfSlot = function (side, k) { let l = g.world.live, sh = l && l.lineup && l.lineup.shapes ? FORMS[l.lineup.shapes[side]] : null; if (!sh) { let mids = side === 'h' ? 4 : 3; return k < 1 ? 'GK' : k < 5 ? 'DEF' : k < 5 + mids ? 'MID' : 'FWD' } return k < 1 ? 'GK' : k < 1 + sh[1] ? 'DEF' : k < 1 + sh[1] + sh[2] ? 'MID' : 'FWD' };
+/* ---------- wages, decline, retirement ---------- */
+function wageBands() { let ws = [...g.squad].map(p => p.wage).sort((a, b) => b - a), top = ws[0] || 0, med = ws[Math.floor(ws.length / 2)] || 0, low = ws.at(-1) || 0; return { top, med, low, ratio: low ? Math.round(top / low * 10) / 10 : 0, total: ws.reduce((a, b) => a + b, 0) } }
+function restructureWages() {
+  if (g.wagesFixed) return; g.wagesFixed = true; let total = g.squad.reduce((s, p) => s + p.wage, 0), avg = g.squad.reduce((s, p) => s + p.rating, 0) / Math.max(1, g.squad.length);
+  let factor = p => clamp(Math.pow(p.rating / avg, 4.5), .3, 4.2) * (p.age < 21 ? .5 : p.age < 23 ? .72 : p.age > 32 ? .9 : 1) * (normPos(p.position) === 'GK' ? .9 : 1), fsum = g.squad.reduce((s, p) => s + factor(p), 0);
+  for (let p of g.squad) p.wage = Math.max(500, Math.round(total * factor(p) / fsum / 100) * 100);
+}
+performSeasonRollover = function () {
+  let retiring = g.squad.filter(p => { let gk = normPos(p.position) === 'GK', a = p.age + 1 - (gk ? 2 : 0); return a >= 34 && rnd() < (a >= 37 ? .85 : a >= 36 ? .6 : a >= 35 ? .4 : .22) }), names = retiring.map(p => p.name);
+  for (let p of retiring) { (g.retired = g.retired || []).push({ name: p.name, age: p.age + 1, season: g.season, apps: p.apps || 0, pos: p.position }); if (g.captain === p.id) g.captain = null }
+  if (retiring.length) { g.squad = g.squad.filter(p => !retiring.includes(p)); msg('Retirements', `${names.join(', ')} ${names.length > 1 ? 'have' : 'has'} retired from playing. ${names.length > 1 ? 'Their' : 'His'} wages come off the bill.`, 'football'); if (typeof pressQueue === 'function' && retiring.some(p => rankOf(p) <= 5)) pressQueue({ head: 'A LEGEND HANGS UP HIS BOOTS', sub: `${retiring[0].name} retires after a career at ${club().name}.`, body: `The ${retiring[0].age + 1}-year-old ${retiring[0].position === 'GK' ? 'goalkeeper' : 'player'} bows out. A testimonial is being discussed.`, tone: 'good', kind: 'club', scene: 'signing' }) }
+  baseSqRollover();
+  for (let p of g.squad) { if (p.age >= 31) { let d = (p.age - 30) * .6 + rnd() * .8; p.rating = Math.max(35, p.rating - d); p.attrs = null } }
+};
+/* ---------- the First team page ---------- */
+football = function () {
+  let h = baseSqFootball(); if (typeof h !== 'string') return h; let c = captain(), wb = wageBands(), fm = formation(), top3 = [...g.squad].sort((a, b) => captainScore(b) - captainScore(a)).slice(0, 3);
+  let card_ = `<div class="card"><div class="cardhead"><h2>Captain & formation</h2></div><div class="pad twocol"><div><label>Club captain</label><div class="caprow">${c ? `${typeof playerFace === 'function' ? playerFace(c, 'capf', 44) : ''}<div><b>${esc(c.name)} <span class="capbadge">C</span></b><small>Captaincy ${captainScore(c)}/100 · leadership ${attrs(c).leadership}</small></div>` : '<p>No captain</p>'}</div><p class="fineprint">The manager would pick: ${top3.map(p => esc(p.name.split(' ').pop()) + ' (' + captainScore(p) + ')').join(', ')}. Open any player to hand him the armband.</p></div><div><label>Formation · the manager plays ${fm}</label><div class="chips formchips">${Object.keys(FORMS).map(f => `<button class="${f === fm ? 'on' : ''}" onclick="suggestFormation('${f}')">${f}</button>`).join('')}</div><p class="fineprint">Suggest a shape; he may or may not take it. Attacking shapes score more and concede more.</p></div></div></div>
+  <div class="card"><div class="cardhead"><h2>Wage structure</h2><span class="eyebrow">${money(wb.total)} A WEEK</span></div><div class="pad wagebands"><div><small>TOP EARNER</small><b>${money(wb.top)}</b></div><div><small>MEDIAN</small><b>${money(wb.med)}</b></div><div><small>LOWEST</small><b>${money(wb.low)}</b></div><div><small>TOP ÷ LOWEST</small><b>${wb.ratio}×</b></div><p class="fineprint">A healthy structure sits around 4–6×. Stars above that unsettle the dressing room; a flat structure means your best players are underpaid and will be poached.</p></div></div>`;
+  h = h.replace('<div class="sectiontitle"><h2>First-team squad</h2>', card_ + '<div class="sectiontitle"><h2>First-team squad</h2>');
+  h = h.replace(/<div class="card">(<div class="portrait drawn">)/g, (s, p) => s).replace(/<h3>([^<]*)<\/h3><small>([^<]*)<\/small>/g, (s, name, sub) => { let p = g.squad.find(x => esc(x.name) === name); return p ? `<h3 class="plink" onclick="playerProfile('${p.id}')">${name}${c && c.id === p.id ? ' <span class="capbadge">C</span>' : ''}</h3><small>${sub} · <a onclick="playerProfile('${p.id}')">Profile</a></small>` : s });
+  return h;
+};
+/* ---------- grouped sidebar ---------- */
+const NAV_GROUPS = [['Club', ['Overview', 'Inbox', 'Calendar', 'Matchday', 'Fans', 'Affiliations', 'Legacy', 'Credits']], ['Football', ['Football', 'Contracts', 'Medical', 'Recruitment', 'Academy', 'Staff']], ['Finance', ['Finances', 'Forecast', 'Compliance', 'Ownership']], ['Revenue', ['Sponsorship', 'Commercial', 'Broadcasting', 'Stadium', 'Operations']], ['Competition', ['League', 'Hot', 'Competitions']]];
+let navOpen = null, navOpenFor = null;
+function navToggle(name) { if (!navOpen) navOpen = {}; navOpen[name] = !navOpen[name]; $('nav').innerHTML = navHtml() }
+navHtml = function () {
+  let flat = baseSqNav(), items = {}; flat.replace(/<button class="([^"]*)" onclick="go\('([^']+)'\)">([\s\S]*?)<\/button>/g, (s, cls, p, inner) => { items[p] = `<button class="${cls}" onclick="go('${p}')">${inner}</button>`; return s });
+  let grouped = new Set(NAV_GROUPS.flatMap(x => x[1])), extra = Object.keys(items).filter(p => !grouped.has(p));
+  let current = (NAV_GROUPS.find(gp => gp[1].includes(page)) || NAV_GROUPS[0])[0]; if (navOpen == null) navOpen = { [current]: true }; if (navOpenFor !== page) { navOpenFor = page; navOpen = { [current]: true } }
+  const GICON = { Club: 'Overview', Football: 'Football', Finance: 'Finances', Revenue: 'Sponsorship', Competition: 'League' };
+  return NAV_GROUPS.map(([name, pages]) => { let present = pages.filter(p => items[p]); if (!present.length) return ''; let active = present.includes(page), isOpen = !!navOpen[name], badge = present.some(p => /class="count/.test(items[p])) && !isOpen ? '<span class="count">•</span>' : ''; return `<div class="navgroup ${isOpen ? 'open' : ''} ${active ? 'active' : ''}"><button class="navhead" onclick="navToggle('${name}')">${icon(GICON[name] || name)}<span>${esc(name)}</span>${badge}<i>${isOpen ? '−' : '+'}</i></button><div class="navitems">${present.map(p => items[p]).join('')}</div></div>` }).join('') + extra.map(p => items[p]).join('');
+};
+/* ---------- the safety valve ---------- */
+function resetView() { let w = g.world; $('modal').innerHTML = ''; resultOpen = false; if (typeof pcOpen !== 'undefined') pcOpen = null; if (typeof travelRun !== 'undefined') travelRun = null; if (w) { w.celebrate = null; if (w.live && w.live.minute >= 90) finishMatch() } if (typeof ffwd !== 'undefined' && ffwd.on) ffwdEnd(); stopClock(); page = 'Overview'; save(); render(); toast('View reset. Your save is untouched.') }
+pauseSettings = function () { baseSqPause(); let h = $('modal').innerHTML; if (typeof h === 'string') { let i = h.indexOf('<div class="actions"><button class="primary" onclick="closeModal()">Done'); if (i > 0) $('modal').innerHTML = h.slice(0, i) + `<div class="pauseopt" style="cursor:default"><span><b>Stuck?</b><small>If a screen will not close or the game seems frozen, reset the view. Nothing is lost.</small></span><button onclick="resetView()">Reset the view</button></div>` + h.slice(i) } };
+const baseSqEnsure = ensureWorld; ensureWorld = function (...a) { let r = baseSqEnsure(...a); captain(); return r };  // wage structuring now lives entirely in finance.js's initFin(), so it only ever runs once
+
+/* ---------- progress you can see: monthly rating history, form nudges, risers and fallers ---------- */
+const baseSqWeekly = weeklyWorld, baseSqFinishMatch = finishMatch;
+function snapRatings() { let key = g.world.date.slice(0, 7); for (let p of g.squad) { p.hist = p.hist || []; if (!p.hist.length || p.hist.at(-1).m !== key) { p.hist.push({ m: key, r: Math.round(p.rating * 10) / 10 }); p.hist = p.hist.slice(-30) } if (p.seasonStart == null || p.seasonStartSeason !== g.season) { p.seasonStart = Math.round(p.rating * 10) / 10; p.seasonStartSeason = g.season } } }
+weeklyWorld = function () { baseSqWeekly(); if (g.ended || !g.world) return; snapRatings() };
+finishMatch = function () { baseSqFinishMatch(); let m = g.world.lastMatch; if (!m || !m.ratings) return; for (let r of m.ratings) { let p = g.squad.find(x => x.id === r.id); if (!p) continue; p.apps = (p.apps || 0) + 1; let young = p.age < 24, d = r.r >= 8 ? (young ? .22 : .12) : r.r >= 7.2 ? (young ? .1 : .05) : r.r <= 5.3 ? -.08 : r.r <= 6 ? -.03 : 0; if (d) { p.rating = clamp(p.rating + d, 30, 99); p.attrs = null } } };
+function trend(p) { let s = p.seasonStart != null && p.seasonStartSeason === g.season ? p.seasonStart : (p.hist && p.hist[0] ? p.hist[0].r : p.rating); return Math.round((p.rating - s) * 10) / 10 }
+function trendTag(p) { let d = trend(p); return d >= .5 ? `<span class="trend up">▲ ${d.toFixed(1)}</span>` : d <= -.5 ? `<span class="trend down">▼ ${Math.abs(d).toFixed(1)}</span>` : `<span class="trend flat">▬</span>` }
+function sparkline(p) { let h = (p.hist || []).map(x => x.r); if (h.length < 2) return ''; let lo = Math.min(...h) - 1, hi = Math.max(...h) + 1, pts = h.map((v, i) => `${(i / (h.length - 1) * 100).toFixed(1)},${(100 - (v - lo) / (hi - lo) * 100).toFixed(1)}`).join(' '); return `<svg class="spark rating" viewBox="0 0 100 100" preserveAspectRatio="none"><polyline points="${pts}" fill="none" stroke="currentColor" stroke-width="3"/></svg>` }
+function progressNote(p) { let d = trend(p), a = p.age; if (a < 22) return d > 0 ? 'Developing well. Game time is turning into ability.' : 'Young and raw. He needs minutes, or a loan.'; if (a < 27) return d >= .5 ? 'Improving into his prime.' : 'Approaching his prime years.'; if (a < 31) return 'At his peak. Expect him to hold this level for a while.'; return d < 0 ? 'Past his best and starting to decline. Plan the succession.' : 'Experienced; the decline is coming.' }
+const baseSqProfile = playerProfile;
+playerProfile = function (id) { baseSqProfile(id); let p = g.squad.find(x => x.id === id); if (!p) return; let h = $('modal').innerHTML; if (typeof h !== 'string') return; $('modal').innerHTML = h.replace('<div class="attrgrid">', `<div class="progress"><div><small>THIS SEASON</small><b>${trendTag(p)}</b></div><div><small>${(p.hist || []).length} MONTHS</small>${sparkline(p) || '<span class="muted">No history yet</span>'}</div><div><small>APPEARANCES</small><b>${p.apps || 0}</b></div><p class="fineprint">${progressNote(p)}</p></div><div class="attrgrid">`) };
+const baseSqFootball2 = football;
+football = function () { let h = baseSqFootball2(); if (typeof h !== 'string') return h; let sorted = [...g.squad].sort((a, b) => trend(b) - trend(a)), up = sorted.filter(p => trend(p) >= .5).slice(0, 4), down = sorted.filter(p => trend(p) <= -.5).reverse().slice(0, 4);
+  let row = p => `<div class="lbrow"><div class="lbname"><b class="plink" onclick="playerProfile('${p.id}')">${esc(p.name)}</b><small>${p.age} · ${Math.round(p.rating)} rating</small></div>${trendTag(p)}</div>`;
+  let card_ = `<div class="card"><div class="cardhead"><h2>Risers and fallers</h2><span class="eyebrow">THIS SEASON</span></div><div class="pad formgrid two"><div><h3>📈 Improving</h3>${up.map(row).join('') || '<p class="emptynote">Nobody has moved yet. Young players grow with games; big performances help.</p>'}</div><div><h3>📉 Declining</h3>${down.map(row).join('') || '<p class="emptynote">Nobody is slipping yet.</p>'}</div></div></div>`;
+  h = h.replace('<div class="sectiontitle"><h2>First-team squad</h2>', card_ + '<div class="sectiontitle"><h2>First-team squad</h2>');
+  return h.replace(/<span class="ptnum">([^<]*)<\/span>/g, (s, n) => s).replace(/<div class="ministats">/g, (s) => s);
+};
+const baseSqPortrait = portrait;
+portrait = function (p) { let h = baseSqPortrait(p), i = h.lastIndexOf('</div>'); return h.slice(0, i) + trendTag(p) + h.slice(i) };

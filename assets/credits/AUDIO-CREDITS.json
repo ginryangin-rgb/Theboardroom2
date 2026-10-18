@@ -1,0 +1,420 @@
+[
+  {
+    "id": "crowd_calm_loop",
+    "file": "audio/crowd_calm_loop.mp3",
+    "category": "crowd",
+    "duration": 8.0,
+    "bytes": 48621,
+    "loop": true,
+    "licence": "CC0-1.0 \u2014 original procedural synthesis",
+    "description": "Low stadium crowd bed."
+  },
+  {
+    "id": "crowd_match_loop",
+    "file": "audio/crowd_match_loop.mp3",
+    "category": "crowd",
+    "duration": 10.0,
+    "bytes": 60573,
+    "loop": true,
+    "licence": "CC0-1.0 \u2014 original procedural synthesis",
+    "description": "General match crowd atmosphere."
+  },
+  {
+    "id": "crowd_tense_loop",
+    "file": "audio/crowd_tense_loop.mp3",
+    "category": "crowd",
+    "duration": 8.0,
+    "bytes": 48621,
+    "loop": true,
+    "licence": "CC0-1.0 \u2014 original procedural synthesis",
+    "description": "Quieter tense stadium atmosphere."
+  },
+  {
+    "id": "goal_cheer_1",
+    "file": "audio/goal_cheer_1.mp3",
+    "category": "goals",
+    "duration": 4.8,
+    "bytes": 29325,
+    "loop": false,
+    "licence": "CC0-1.0 \u2014 original procedural synthesis",
+    "description": "Rising original synthetic crowd goal celebration."
+  },
+  {
+    "id": "goal_cheer_2",
+    "file": "audio/goal_cheer_2.mp3",
+    "category": "goals",
+    "duration": 5.1,
+    "bytes": 31197,
+    "loop": false,
+    "licence": "CC0-1.0 \u2014 original procedural synthesis",
+    "description": "Rising original synthetic crowd goal celebration."
+  },
+  {
+    "id": "goal_cheer_3",
+    "file": "audio/goal_cheer_3.mp3",
+    "category": "goals",
+    "duration": 5.4,
+    "bytes": 32925,
+    "loop": false,
+    "licence": "CC0-1.0 \u2014 original procedural synthesis",
+    "description": "Rising original synthetic crowd goal celebration."
+  },
+  {
+    "id": "crowd_applause",
+    "file": "audio/crowd_applause.mp3",
+    "category": "crowd",
+    "duration": 3.5,
+    "bytes": 21549,
+    "loop": false,
+    "licence": "CC0-1.0 \u2014 original procedural synthesis",
+    "description": "Short applause reaction."
+  },
+  {
+    "id": "crowd_disappointed",
+    "file": "audio/crowd_disappointed.mp3",
+    "category": "crowd",
+    "duration": 3.0,
+    "bytes": 18525,
+    "loop": false,
+    "licence": "CC0-1.0 \u2014 original procedural synthesis",
+    "description": "Low crowd groan after conceding."
+  },
+  {
+    "id": "crowd_near_miss",
+    "file": "audio/crowd_near_miss.mp3",
+    "category": "crowd",
+    "duration": 2.4,
+    "bytes": 14925,
+    "loop": false,
+    "licence": "CC0-1.0 \u2014 original procedural synthesis",
+    "description": "Short rising and falling near-miss reaction."
+  },
+  {
+    "id": "whistle_single",
+    "file": "audio/whistle_single.mp3",
+    "category": "whistles",
+    "duration": 0.8,
+    "bytes": 5421,
+    "loop": false,
+    "licence": "CC0-1.0 \u2014 original procedural synthesis",
+    "description": "One referee whistle blast."
+  },
+  {
+    "id": "whistle_kickoff",
+    "file": "audio/whistle_kickoff.mp3",
+    "category": "whistles",
+    "duration": 1.05,
+    "bytes": 6861,
+    "loop": false,
+    "licence": "CC0-1.0 \u2014 original procedural synthesis",
+    "description": "Longer kick-off whistle."
+  },
+  {
+    "id": "whistle_halftime",
+    "file": "audio/whistle_halftime.mp3",
+    "category": "whistles",
+    "duration": 1.36,
+    "bytes": 8733,
+    "loop": false,
+    "licence": "CC0-1.0 \u2014 original procedural synthesis",
+    "description": "Two blasts for half-time."
+  },
+  {
+    "id": "whistle_final",
+    "file": "audio/whistle_final.mp3",
+    "category": "whistles",
+    "duration": 2.23,
+    "bytes": 13917,
+    "loop": false,
+    "licence": "CC0-1.0 \u2014 original procedural synthesis",
+    "description": "Three blasts with a long final whistle."
+  },
+  {
+    "id": "bus_arrival",
+    "file": "audio/bus_arrival.mp3",
+    "category": "transport",
+    "duration": 6.0,
+    "bytes": 36525,
+    "loop": false,
+    "licence": "CC0-1.0 \u2014 original procedural synthesis",
+    "description": "Original synthesized diesel team bus arriving and idling."
+  },
+  {
+    "id": "bus_departure",
+    "file": "audio/bus_departure.mp3",
+    "category": "transport",
+    "duration": 6.0,
+    "bytes": 36525,
+    "loop": false,
+    "licence": "CC0-1.0 \u2014 original procedural synthesis",
+    "description": "Original synthesized team bus pulling away."
+  },
+  {
+    "id": "bus_door_airbrake",
+    "file": "audio/bus_door_airbrake.mp3",
+    "category": "transport",
+    "duration": 1.8,
+    "bytes": 11325,
+    "loop": false,
+    "licence": "CC0-1.0 \u2014 original procedural synthesis",
+    "description": "Pneumatic air-brake release and door close."
+  },
+  {
+    "id": "aeroplane_takeoff",
+    "file": "audio/aeroplane_takeoff.mp3",
+    "category": "transport",
+    "duration": 7.0,
+    "bytes": 42573,
+    "loop": false,
+    "licence": "CC0-1.0 \u2014 original procedural synthesis",
+    "description": "Original synthesized jet engine take-off swell."
+  },
+  {
+    "id": "aeroplane_flyover",
+    "file": "audio/aeroplane_flyover.mp3",
+    "category": "transport",
+    "duration": 7.0,
+    "bytes": 42573,
+    "loop": false,
+    "licence": "CC0-1.0 \u2014 original procedural synthesis",
+    "description": "Original synthesized passing aeroplane."
+  },
+  {
+    "id": "ui_message",
+    "file": "audio/ui_message.mp3",
+    "category": "interface",
+    "duration": 0.7,
+    "bytes": 4845,
+    "loop": false,
+    "licence": "CC0-1.0 \u2014 original procedural synthesis",
+    "description": "Short original interface notification."
+  },
+  {
+    "id": "ui_transfer_complete",
+    "file": "audio/ui_transfer_complete.mp3",
+    "category": "interface",
+    "duration": 0.7,
+    "bytes": 4845,
+    "loop": false,
+    "licence": "CC0-1.0 \u2014 original procedural synthesis",
+    "description": "Short original interface notification."
+  },
+  {
+    "id": "ui_warning",
+    "file": "audio/ui_warning.mp3",
+    "category": "interface",
+    "duration": 0.7,
+    "bytes": 4845,
+    "loop": false,
+    "licence": "CC0-1.0 \u2014 original procedural synthesis",
+    "description": "Short original interface notification."
+  },
+  {
+    "id": "ui_contract_signed",
+    "file": "audio/ui_contract_signed.mp3",
+    "category": "interface",
+    "duration": 0.7,
+    "bytes": 4845,
+    "loop": false,
+    "licence": "CC0-1.0 \u2014 original procedural synthesis",
+    "description": "Short original interface notification."
+  },
+  {
+    "id": "commentary_goal_its_in",
+    "file": "audio/commentary_goal_its_in.mp3",
+    "category": "commentary",
+    "duration": 1.056,
+    "bytes": 6573,
+    "loop": false,
+    "text": "Goal! It is in!",
+    "licence": "Original synthetic speech using permissively licensed CMU Flite AWB voice",
+    "description": "Generic synthetic commentary; not a recording or imitation of a sports broadcaster."
+  },
+  {
+    "id": "commentary_goal_what_a_finish",
+    "file": "audio/commentary_goal_what_a_finish.mp3",
+    "category": "commentary",
+    "duration": 1.008,
+    "bytes": 6285,
+    "loop": false,
+    "text": "What a finish!",
+    "licence": "Original synthetic speech using permissively licensed CMU Flite AWB voice",
+    "description": "Generic synthetic commentary; not a recording or imitation of a sports broadcaster."
+  },
+  {
+    "id": "commentary_take_the_lead",
+    "file": "audio/commentary_take_the_lead.mp3",
+    "category": "commentary",
+    "duration": 1.584,
+    "bytes": 9741,
+    "loop": false,
+    "text": "They have taken the lead!",
+    "licence": "Original synthetic speech using permissively licensed CMU Flite AWB voice",
+    "description": "Generic synthetic commentary; not a recording or imitation of a sports broadcaster."
+  },
+  {
+    "id": "commentary_equaliser",
+    "file": "audio/commentary_equaliser.mp3",
+    "category": "commentary",
+    "duration": 1.368,
+    "bytes": 8445,
+    "loop": false,
+    "text": "There is the equaliser!",
+    "licence": "Original synthetic speech using permissively licensed CMU Flite AWB voice",
+    "description": "Generic synthetic commentary; not a recording or imitation of a sports broadcaster."
+  },
+  {
+    "id": "commentary_brilliant_save",
+    "file": "audio/commentary_brilliant_save.mp3",
+    "category": "commentary",
+    "duration": 1.176,
+    "bytes": 7293,
+    "loop": false,
+    "text": "A brilliant save!",
+    "licence": "Original synthetic speech using permissively licensed CMU Flite AWB voice",
+    "description": "Generic synthetic commentary; not a recording or imitation of a sports broadcaster."
+  },
+  {
+    "id": "commentary_off_the_post",
+    "file": "audio/commentary_off_the_post.mp3",
+    "category": "commentary",
+    "duration": 1.584,
+    "bytes": 9741,
+    "loop": false,
+    "text": "It is off the post!",
+    "licence": "Original synthetic speech using permissively licensed CMU Flite AWB voice",
+    "description": "Generic synthetic commentary; not a recording or imitation of a sports broadcaster."
+  },
+  {
+    "id": "commentary_just_wide",
+    "file": "audio/commentary_just_wide.mp3",
+    "category": "commentary",
+    "duration": 1.104,
+    "bytes": 6861,
+    "loop": false,
+    "text": "Just wide!",
+    "licence": "Original synthetic speech using permissively licensed CMU Flite AWB voice",
+    "description": "Generic synthetic commentary; not a recording or imitation of a sports broadcaster."
+  },
+  {
+    "id": "commentary_halftime",
+    "file": "audio/commentary_halftime.mp3",
+    "category": "commentary",
+    "duration": 1.32,
+    "bytes": 8157,
+    "loop": false,
+    "text": "That is half time.",
+    "licence": "Original synthetic speech using permissively licensed CMU Flite AWB voice",
+    "description": "Generic synthetic commentary; not a recording or imitation of a sports broadcaster."
+  },
+  {
+    "id": "commentary_fulltime",
+    "file": "audio/commentary_fulltime.mp3",
+    "category": "commentary",
+    "duration": 2.208,
+    "bytes": 13485,
+    "loop": false,
+    "text": "The final whistle. It is all over!",
+    "licence": "Original synthetic speech using permissively licensed CMU Flite AWB voice",
+    "description": "Generic synthetic commentary; not a recording or imitation of a sports broadcaster."
+  },
+  {
+    "id": "commentary_kickoff",
+    "file": "audio/commentary_kickoff.mp3",
+    "category": "commentary",
+    "duration": 1.08,
+    "bytes": 6717,
+    "loop": false,
+    "text": "We are underway!",
+    "licence": "Original synthetic speech using permissively licensed CMU Flite AWB voice",
+    "description": "Generic synthetic commentary; not a recording or imitation of a sports broadcaster."
+  },
+  {
+    "id": "commentary_penalty",
+    "file": "audio/commentary_penalty.mp3",
+    "category": "commentary",
+    "duration": 1.848,
+    "bytes": 11325,
+    "loop": false,
+    "text": "A penalty has been awarded!",
+    "licence": "Original synthetic speech using permissively licensed CMU Flite AWB voice",
+    "description": "Generic synthetic commentary; not a recording or imitation of a sports broadcaster."
+  },
+  {
+    "id": "commentary_red_card",
+    "file": "audio/commentary_red_card.mp3",
+    "category": "commentary",
+    "duration": 1.848,
+    "bytes": 11325,
+    "loop": false,
+    "text": "A red card. He is off!",
+    "licence": "Original synthetic speech using permissively licensed CMU Flite AWB voice",
+    "description": "Generic synthetic commentary; not a recording or imitation of a sports broadcaster."
+  },
+  {
+    "id": "commentary_promotion",
+    "file": "audio/commentary_promotion.mp3",
+    "category": "commentary",
+    "duration": 1.704,
+    "bytes": 10461,
+    "loop": false,
+    "text": "They have done it. Promotion!",
+    "licence": "Original synthetic speech using permissively licensed CMU Flite AWB voice",
+    "description": "Generic synthetic commentary; not a recording or imitation of a sports broadcaster."
+  },
+  {
+    "id": "commentary_cup_winners",
+    "file": "audio/commentary_cup_winners.mp3",
+    "category": "commentary",
+    "duration": 1.464,
+    "bytes": 9021,
+    "loop": false,
+    "text": "They are the cup winners!",
+    "licence": "Original synthetic speech using permissively licensed CMU Flite AWB voice",
+    "description": "Generic synthetic commentary; not a recording or imitation of a sports broadcaster."
+  },
+  {
+    "id": "commentary_new_signing",
+    "file": "audio/commentary_new_signing.mp3",
+    "category": "commentary",
+    "duration": 1.608,
+    "bytes": 9885,
+    "loop": false,
+    "text": "A new signing has arrived.",
+    "licence": "Original synthetic speech using permissively licensed CMU Flite AWB voice",
+    "description": "Generic synthetic commentary; not a recording or imitation of a sports broadcaster."
+  },
+  {
+    "id": "commentary_away_goal",
+    "file": "audio/commentary_away_goal.mp3",
+    "category": "commentary",
+    "duration": 1.8,
+    "bytes": 11037,
+    "loop": false,
+    "text": "The away side take the lead!",
+    "licence": "Original synthetic speech using permissively licensed CMU Flite AWB voice",
+    "description": "Generic synthetic commentary; not a recording or imitation of a sports broadcaster."
+  },
+  {
+    "id": "commentary_late_winner",
+    "file": "audio/commentary_late_winner.mp3",
+    "category": "commentary",
+    "duration": 1.488,
+    "bytes": 9165,
+    "loop": false,
+    "text": "A dramatic late winner!",
+    "licence": "Original synthetic speech using permissively licensed CMU Flite AWB voice",
+    "description": "Generic synthetic commentary; not a recording or imitation of a sports broadcaster."
+  },
+  {
+    "id": "commentary_good_move",
+    "file": "audio/commentary_good_move.mp3",
+    "category": "commentary",
+    "duration": 1.848,
+    "bytes": 11325,
+    "loop": false,
+    "text": "That is a lovely passing move.",
+    "licence": "Original synthetic speech using permissively licensed CMU Flite AWB voice",
+    "description": "Generic synthetic commentary; not a recording or imitation of a sports broadcaster."
+  }
+]

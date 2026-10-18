@@ -1,0 +1,16 @@
+/* The Credits page. Required reading for anyone shipping Creative Commons photography: this is where every photographer is thanked,
+   every licence is linked, and it is made clear that a reusable photo licence is not the same as a trademark or endorsement. */
+
+function creditsPage() {
+  if (window.__CLUBS__ || typeof PHOTO_CREDITS === 'undefined') return `<p>This preview build uses drawn portraits only. The hosted version of the game credits every real photograph here.</p>`;
+  let rows = []; for (let l of DB) for (let c of l.clubs) for (let p of c.players) if (PHOTO_CREDITS[p.id]) rows.push([p.name, c.short, p.id]);
+  rows.sort((a, b) => a[1].localeCompare(b[1]) || a[0].localeCompare(b[0]));
+  let licCounts = {}; for (let r of rows) { let lic = PHOTO_CREDITS[r[2]][1]; licCounts[lic] = (licCounts[lic] || 0) + 1 }
+  let table = rows.map(([name, club, id]) => { let [artist, lic, url, src] = PHOTO_CREDITS[id]; return `<tr><td>${esc(name)}</td><td>${esc(club)}</td><td>${esc(artist)}</td><td><a href="${esc(url)}" target="_blank" rel="noopener">${esc(lic)}</a></td><td><a href="${esc(src)}" target="_blank" rel="noopener">source</a></td></tr>` }).join('');
+  return `<p>${rows.length} real player photographs are used under their individual Creative Commons or public-domain licences, each one credited below and linked back to its original file on Wikimedia Commons.</p>
+  <div class="card"><div class="cardhead"><h2>What's real, what isn't</h2></div><div class="pad"><p>Player photographs are reusable Wikimedia Commons images; many remain copyrighted by their photographer and are used here under a licence, not by permission of the player or club. A photo's licence does not imply that the player, club, or any competition endorses this game, and no club badge, trademark or shirt sponsor shown here implies affiliation. Players without a verifiably-licensed photo use either an AI-generated fictional face from a fixed, reused pool, or a drawn portrait generated from their name &mdash; neither is intended to represent a real person.</p><p class="fineprint">Licence counts: ${Object.entries(licCounts).map(([k, v]) => `${esc(k)} &times;${v}`).join(', ')}.</p></div></div>
+  <div class="card"><div class="cardhead"><h2>Sound</h2></div><div class="pad"><p>Crowd, whistle, goal and travel sounds are real field recordings from Freesound.org and Wikimedia Commons contributors, each individually licensed (CC0, CC&nbsp;BY or CC&nbsp;BY-SA) and credited in full in <code>assets/credits/AUDIO-CREDITS-V2.txt</code>. The commentary voice is Piper's open-source <i>northern_english_male</i> neural model (CC&nbsp;BY-SA&nbsp;4.0) &mdash; a real synthetic voice, not a human broadcaster; its model card is in <code>assets/credits/VOICE-MODEL-CARD.txt</code>.</p></div></div>
+  <div class="card"><div class="cardhead"><h2>Photograph credits</h2><span class="eyebrow">${rows.length} PHOTOS</span></div><div class="pad"><table class="creditstable"><tr><th>Player</th><th>Club</th><th>Photographer</th><th>Licence</th><th>Source</th></tr>${table}</table></div></div>`;
+}
+icons.Credits = '<path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/>';
+NAV_ORDER.push('Credits'); PAGE_BUILDERS.Credits = creditsPage; MY_PAGES.push('Credits'); MY_LABELS.Credits = ['ATTRIBUTION', 'Credits', 'Every real photograph, properly credited and linked.'];
